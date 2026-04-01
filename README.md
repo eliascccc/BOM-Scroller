@@ -1,6 +1,6 @@
 ## BomScroller
 
-A time-based BOM navigator based on ERP data.
+A time-based BOM navigator built for live ERP data.
 
 
 ---
@@ -69,16 +69,46 @@ http://127.0.0.1:5000
 ```
 
 ---
-## How it compare
+## How it compares
 
-[bom-diff](https://github.com/ttran-tech/bom-diff)
-→ Upload and compare two BOM files (from Excel)
+#### File-based BOM diff tools
 
-Bom Scroller (this project)
-→ Scroll through BOM versions over time (from ERP data)
+[bom-diff](https://github.com/ttran-tech/bom-diff)  
+→ Upload and compare two BOM files (Excel/CSV)
+
+[BOM Compare Tool (Sierra Circuits)](https://www.protoexpress.com/tools/bom-compare-tool/)  
+→ Upload BOM files and highlight added/removed/changed parts
+
+[Excel BOM Comparer](https://ddbim.com/excelbomcomparer/)  
+→ Compare two revisions directly in Excel
 
 ---
 
+#### ERP / PLM tools
+
+OpenBOM, NetSuite tools, ERPNext BOM compare
+
+These allow comparing BOM revisions inside a system, typically:
+
+- select BOM A  
+- select BOM B  
+- view differences  
+
+---
+
+#### BomScroller (this project)
+
+BomScroller takes a different approach:
+
+- No file upload  
+- No “compare A vs B”  
+- No static snapshots  
+
+Instead:
+
+→ Scroll through BOM versions over time, directly from ERP data
+
+---
 ## Project status
 
 This is a concept prototype.
