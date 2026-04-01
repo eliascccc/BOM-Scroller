@@ -50,3 +50,18 @@ The system does not attempt to prove true identity of components across revision
 * `qty`
 
 A change in either is treated as a meaningful modification.
+
+# Conclusion
+
+BOMscroller is built for a revision-driven, traceable BOM environment where structure is stable and changes are incremental.
+
+The core assumption is that item_grp represents structural continuity across versions. It is not proof of component identity, but it is the most reliable anchor for comparison.
+
+The system deliberately avoids relying on article number matching or abstract grouping. Instead, it uses:
+
+- SKU for scope
+- version rows for time anchoring
+- item_grp for structure
+- item and qty for change detection
+
+The result is a comparison model that aligns with how real BOMs are maintained and how users actually interpret them.
