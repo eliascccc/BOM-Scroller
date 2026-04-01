@@ -102,15 +102,14 @@ Instead:
 
 ---
 
-## Data model note
+## Assumptions behind the BOM structure
 
-`item_grp` is used both for sorting and matching rows across versions
+This project is built around a specific assumption of how BOMs behave in real-world ERP systems:
+they are revision-driven, structurally stable, and evolve incrementally over time.
 
-In real ERP systems, these concerns are typically separated:
-- one field for visual ordering
-- one field for functional identity / matching
+For a detailed explanation of the underlying model and design decisions, see:
 
-The dataset here is intentionally simplified to make the behavior easier to understand.
+→ [BOM assumptions](bom-assumptions.md)
 
 ---
 
