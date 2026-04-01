@@ -1,6 +1,6 @@
 ## BomScroller
 
-A time-based BOM navigation tool based on ERP data.
+A time-based BOM navigator based on ERP data.
 
 
 ---
