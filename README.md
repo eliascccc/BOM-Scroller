@@ -1,6 +1,6 @@
 ## BOMscroller
 
-A time-based BOM navigator built for live ERP data.
+A time-based BOM navigator built for ERP data.
 
 
 ---
@@ -27,25 +27,49 @@ The goal is simple:
 
 | Relation                  | Color   |
 |--------------------------|--------|
-| Change Left vs Center    | Blue   |
-| Change Center vs Right   | Purple |
+| Diff: Left → Center      | Blue   |
+| Diff: Center → Right     | Purple |
 
-Changes include:
-- different quantity
-- different part number
-- add new or remove part
+Changes include: added / removed / replaced / qty changed
 
-Green is the current version
+Green indicates the current version
 
 ---
 
-## What this tool is
+## Intended use case
 
-- A visual diff tool for BOM evolution  
-- Based on date-effective data  
-- Designed for human understanding  
+- Fast navigation across many revisions  
+- Rapid review of BOM changes  
+- Clear visual overview of structural changes  
+- For teams that currently export to Excel or manually compare versions  
+
+Built for:
+- date-effective ERP data  
+- human understanding, not raw diff output  
 
 ---
+
+## How it works
+
+Under the hood, BOMs are reconstructed from a row-based ERP model where each row is defined by:
+
+- SKU  
+- item group (structural position in the BOM)  
+- part number  
+- quantity  
+- validity period (from_date / to_date)  
+
+Rows are aligned using a structural key (`item_grp`), not by part identity.
+
+This means:
+- comparisons follow the structure of the BOM  
+- part replacements appear as in-place changes  
+- new parts appear as local insertions  
+
+The BOM can be rebuilt at any point in time without relying on stored snapshots.
+
+---
+
 
 ## Running locally
 
