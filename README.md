@@ -7,12 +7,9 @@ A time-based BOM navigator built for ERP data.
 
 ## Overview
 
-BOMscroller is a local web tool for exploring how a Bill of Materials (BOM) evolves over time.
+BOMscroller is a local web tool for exploring how a Bill of Materials (BOM) evolves over time. It does **not** compare static version snapshots. Instead, it reconstructs BOMs from a **date-driven row model** and compares them visually.
 
-It does **not** compare static version snapshots.  
-Instead, it reconstructs BOMs from a **date-driven row model** and compares them visually.
-
-The goal is simple:
+The goal is:
 
 > Understand *what changed, where,* and *when* — in a way that matches how BOMs actually behave in real systems.
 
@@ -62,11 +59,13 @@ Under the hood, BOMs are reconstructed from a row-based ERP model where each row
 Rows are aligned using a structural key (`item_grp`), not by part identity.
 
 This means:
-- comparisons follow the structure of the BOM  
-- part replacements appear as in-place changes  
-- new parts appear as local insertions  
+- comparisons follow the structure of the BOM, not the part numbers  
+- part replacements appear as in-place changes at the same position  
+- new parts appear as local insertions into the existing structure  
 
-The BOM can be rebuilt at any point in time without relying on stored snapshots.
+The BOM can be rebuilt at any point in time directly from the data model, without relying on stored snapshots.
+
+This approach assumes that BOM structure is stable over time and evolves incrementally. For a detailed explanation of the underlying design and assumptions, see [BOM assumptions](bom-assumptions.md)
 
 ---
 
@@ -123,17 +122,6 @@ BOMscroller takes a different approach:
 Instead:
 
 → Scroll through BOM versions over time, directly from ERP data
-
----
-
-## Assumptions behind the BOM structure
-
-This project is built around a specific assumption of how BOMs behave in real-world ERP systems:
-they are revision-driven, structurally stable, and evolve incrementally over time.
-
-For a detailed explanation of the underlying model and design decisions, see:
-
-→ [BOM assumptions](bom-assumptions.md)
 
 ---
 
