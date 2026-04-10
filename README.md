@@ -1,4 +1,4 @@
-## BOMscroller
+## BOM scroller
 
 A time-based BOM navigator built for ERP data.
 
@@ -7,15 +7,15 @@ A time-based BOM navigator built for ERP data.
 
 ## Overview
 
-BOMscroller is a local web tool for exploring how a Bill of Materials (BOM) evolves over time. It does **not** compare static version snapshots. Instead, it reconstructs BOMs from a **date-driven row model** and compares them visually.
+BOM scroller is a local web tool for exploring how a Bill of Materials (BOM) evolves over time. It does **not** compare static version snapshots. Instead, it reconstructs BOMs from a **data source** and compares them visually.
 
 The goal is:
 
-> Understand *what changed, where,* and *when* — in a way that matches how BOMs actually behave in real systems.
+Understand *what changed, where,* and *when* — in a way that matches how BOMs actually behave in real systems.
 
 ---
 ## Example
-<img width="1835" height="835" alt="image" src="https://github.com/user-attachments/assets/cd26d16d-dbc9-4a4b-8bf6-381bbeeefd2f" />
+<img width="1827" height="840" alt="image" src="https://github.com/user-attachments/assets/ebb80646-baac-45c4-9f1d-8d4422cca38a" />
 
 ---
 
@@ -27,7 +27,7 @@ The goal is:
 | Diff: Left → Center      | Blue   |
 | Diff: Center → Right     | Purple |
 
-Changes include: added / removed / replaced / qty changed
+Change highlight for parts that are: added / removed / replaced / qty changed
 
 Green indicates the current version
 
@@ -111,9 +111,9 @@ These allow comparing BOM revisions inside a system, typically:
 
 ---
 
-#### BOMscroller (this project)
+#### BOM scroller (this project)
 
-BOMscroller takes a different approach:
+BOM scroller takes a different approach:
 
 - No file upload  
 - No “compare A vs B”  
